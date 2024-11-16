@@ -1,16 +1,10 @@
 const express = require('express');
-const connection = require('./connection');
-const shipperRoutes = require('./routes/Shipper');
-const shipperZoneRoutes = require('./routes/shipper_zone');  
-const shipperCityRoutes = require('./routes/shipper_city');  
-
 const app = express();
+const connection = require('./connection');
+const ShipperRoutes = require('./routes/Shipper');  
 
 app.use(express.json());
 
-
-app.use('/shipper', shipperRoutes);  
-app.use('/shipper-zone', shipperZoneRoutes);  
-app.use('/shipper-city', shipperCityRoutes);  
+app.use('/shipper', ShipperRoutes);
 
 module.exports = app;
